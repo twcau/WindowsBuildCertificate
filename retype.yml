@@ -1,0 +1,23 @@
+# Retype configuration for WindowsBuildCertificate
+input: .website
+output: docs
+url: https://twcau.github.io/WindowsBuildCertificate/
+title: WindowsBuildCertificate
+theme: auto
+branding:
+  logo: /resources/logo.png
+  label: WindowsBuildCertificate
+github:
+  repo: twcau/WindowsBuildCertificate
+  branch: main
+links:
+  - text: GitHub
+    link: https://github.com/twcau/WindowsBuildCertificate
+order:
+  - .website/project-overview
+  - .website/user-guides
+  - .website/issues
+  - .website/contributing
+  - .website/code
+  - .website/support
+  - .website/buy-me-a-kofi

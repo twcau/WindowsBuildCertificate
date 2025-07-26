@@ -1,0 +1,24 @@
+# Ignore build, logs, and temp files
+*.log
+*.tmp
+*.bak
+*.swp
+*.old
+.DS_Store
+node_modules/
+dist/
+output/
+.vscode/
+.idea/
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+# Ignore Retype input
+.website/
