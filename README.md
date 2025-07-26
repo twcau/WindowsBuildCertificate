@@ -3,7 +3,9 @@
 
 A PowerShell 7 automation and validation toolkit for Windows device build certification. This project ensures all required software, settings, and configurations are completed, validated, and documented for ITSM and compliance.
 
-> [!WARNING] Extreme Alpha - Not even close to being intended for prime time
+> [!WARNING]
+> **Extreme Alpha - Not even close to being intended for prime time**
+>
 > This repository is still under major development and testing, and isn't even close to being ready for prime time use. It's great that you're interested in it however, and feel welcome to let me know if you feel there's anything that could be done or enhanced as I get this ready.
 
 ## Table of Contents
