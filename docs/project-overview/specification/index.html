@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/WindowsBuildCertificate">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806845654433">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806849225290">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
 
     <!-- Primary Meta Tags -->
-    <title>Specification: WindowsBuildCertificate | WindowsBuildCertificate</title>
-    <meta name="title" content="Specification: WindowsBuildCertificate | WindowsBuildCertificate">
-    <meta name="description" content="This project provides a modular PowerShell 7 toolkit to automate and validate Windows device builds, including:">
+    <title>Specification | WindowsBuildCertificate</title>
+    <meta name="title" content="Specification | WindowsBuildCertificate">
+    <meta name="description" content="Overview">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://twcau.github.io/WindowsBuildCertificate/project-overview/specification/">
@@ -20,22 +20,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://twcau.github.io/WindowsBuildCertificate/project-overview/specification/">
-    <meta property="og:title" content="Specification: WindowsBuildCertificate | WindowsBuildCertificate">
-    <meta property="og:description" content="This project provides a modular PowerShell 7 toolkit to automate and validate Windows device builds, including:">
+    <meta property="og:title" content="Specification | WindowsBuildCertificate">
+    <meta property="og:description" content="Overview">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://twcau.github.io/WindowsBuildCertificate/project-overview/specification/">
-    <meta property="twitter:title" content="Specification: WindowsBuildCertificate | WindowsBuildCertificate">
-    <meta property="twitter:description" content="This project provides a modular PowerShell 7 toolkit to automate and validate Windows device builds, including:">
+    <meta property="twitter:title" content="Specification | WindowsBuildCertificate">
+    <meta property="twitter:description" content="Overview">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.806845654433" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.806849225290" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.806845654433" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.806849225290" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.806845654433" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.806849225290" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -191,7 +191,7 @@
                                         </li>
                                         <li class="pr-4">
                                             <a href="../../project-overview/specification/" class="pr-4">
-                                                Specification: Windows​Build​Certificate
+                                                Specification
                                             </a>
                                         </li>
                                     </ol>
@@ -199,12 +199,29 @@
                 
                                 <!-- Page content  -->
 <!-- omit from toc -->
-<doc-anchor-target id="specification-windowsbuildcertificate" class="break-words">
+<doc-anchor-target id="specification" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#specification-windowsbuildcertificate">#</doc-anchor-trigger>
-        <span>Specification: WindowsBuildCertificate</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#specification">#</doc-anchor-trigger>
+        <span>Specification</span>
     </h1>
 </doc-anchor-target>
+<ul>
+<li><doc-anchor-trigger to="#overview">Overview</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#configuration-management-and-script-generation">Configuration Management and Script Generation</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#session-and-progress-persistence">Session and Progress Persistence</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#robustness-and-error-handling">Robustness and Error Handling</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#build-certificate">Build Certificate</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#scirpt-progress-documentation-and-compliance">Scirpt progress, Documentation and Compliance</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#requirements">Requirements</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#success-criteria">Success Criteria</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#key-outcomes">Key Outcomes</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#code-examples">Code examples</doc-anchor-trigger>
+<ul>
+<li><doc-anchor-trigger to="#build-certificate-generate-in-the-post-deployment-script">Build certificate generate in the post-deployment script</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#post-deployment-script-code-to-date-assuming-everything-is-checked-for">Post-deployment script code to date, assuming everything is checked for</doc-anchor-trigger></li>
+</ul>
+</li>
+</ul>
 <doc-anchor-target id="overview">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#overview">#</doc-anchor-trigger>
@@ -213,11 +230,80 @@
 </doc-anchor-target>
 <p>This project provides a modular PowerShell 7 toolkit to automate and validate Windows device builds, including:</p>
 <ul>
-<li>Device and configuration validation (naming, Secure Boot, BitLocker, PCR7, etc.)</li>
+<li>Device and configuration validation (naming checks - as naming needs to be done when logged in as an administrator on the device, Secure Boot, BitLocker, PCR7, etc.)</li>
 <li>Company Portal, OneDrive, Office 365, Teams, Edge, and required app checks</li>
 <li>Intune and AD join validation</li>
 <li>Build certificate generation and export</li>
 <li>Robust logging, error handling, and accessibility</li>
+</ul>
+<p>The project will acheive and provide these functions this by providing a text-based CLI for the user.</p>
+<doc-anchor-target id="configuration-management-and-script-generation">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configuration-management-and-script-generation">#</doc-anchor-trigger>
+        <span>Configuration Management and Script Generation</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Handled in a CLI, preferably and most likely text-based from the outset of the project
+<ul>
+<li>Subject to difficulty,  may also be a Windows Forms UI that is automatically maintained as features in the project are added, removed, updated, or adjusted.</li>
+</ul>
+</li>
+<li>Store and version current and past configurations, with user-defined names and last update dates for reference.</li>
+<li>Enable user-driven configuration and export of OOBE and post-deployment scripts.</li>
+<li>Allow customisation of post-deployment steps and script content.
+<ul>
+<li>Customisation is via a text-based CLI method, where options can be switched on or off easily on a single screen</li>
+</ul>
+</li>
+<li>Provide backup/version control for configuration scripts.</li>
+<li>Ensure all configuration changes are logged and auditable.</li>
+</ul>
+<doc-anchor-target id="session-and-progress-persistence">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#session-and-progress-persistence">#</doc-anchor-trigger>
+        <span>Session and Progress Persistence</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Post-deployment scripts must detect incomplete build sessions and offer the option to continue without repeating already completed steps.</li>
+<li>Persist session and progress state to support device reboots and interrupted builds.</li>
+</ul>
+<doc-anchor-target id="robustness-and-error-handling">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#robustness-and-error-handling">#</doc-anchor-trigger>
+        <span>Robustness and Error Handling</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Provide robust fallback for Autopilot enrolment, supporting both PowerShell 5 and 7.</li>
+<li>Implement comprehensive validation and error handling for all steps.</li>
+<li>Include detailed logging of the CLI, pre and post deployment scripts, with a <code v-pre>--Logverbose</code> option for in-depth diagnostics.</li>
+<li>Ensure all scripts are idempotent and safe to re-run.</li>
+</ul>
+<doc-anchor-target id="build-certificate">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#build-certificate">#</doc-anchor-trigger>
+        <span>Build Certificate</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Generate a text-based build certificate at a user-defined location.</li>
+<li>Copy the build certificate to the clipboard for easy transmission.</li>
+<li>Include all relevant build, validation, and configuration details in the certificate.</li>
+</ul>
+<doc-anchor-target id="scirpt-progress-documentation-and-compliance">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#scirpt-progress-documentation-and-compliance">#</doc-anchor-trigger>
+        <span>Scirpt progress, Documentation and Compliance</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>All script outputs, messages, information, and details passed to the user interface - regardless of the CLI or script being ran - must be clear, concise, specific, detailled, include errors from the system, and enable appropriate next best actions to overcome or address the issue.</li>
+<li>Provide documentation for quality control, compliance, and integration with ITSM/ticketing systems.</li>
+<li>Documentation and code must include references to official documentation for all commands run and modules used.</li>
+<li>Ensure all scripts and documentation are accessible, well-structured, and use EN-AU spelling.</li>
+<li>Maintain a Retype static documentation site, with regular updates and version control.</li>
 </ul>
 <doc-anchor-target id="requirements">
     <h2>
@@ -227,11 +313,16 @@
 </doc-anchor-target>
 <ul>
 <li>PowerShell 7 compatibility</li>
+<li>User interface for script generation and management, ideally from a command-line based CLI in the first instance</li>
 <li>Modular scripts and functions</li>
 <li>User prompts and menu-driven flows</li>
 <li>Exportable scripts for OOBE and post-deployment</li>
 <li>Retype static documentation site</li>
 <li>CI/CD and linting integration</li>
+<li>Configuration management and versioning</li>
+<li>Session and progress persistence</li>
+<li>Robust error handling and logging</li>
+<li>Accessibility and compliance with EN-AU standards</li>
 </ul>
 <doc-anchor-target id="success-criteria">
     <h2>
@@ -241,9 +332,361 @@
 </doc-anchor-target>
 <ul>
 <li>All build steps are validated and logged</li>
-<li>Build certificate is generated and exportable</li>
+<li>Build certificate is generated, exportable, and includes all required details</li>
+<li>Session and progress are reliably persisted and recoverable</li>
 <li>Documentation and code meet accessibility and EN-AU standards</li>
+<li>All requirements above are met without regression or loss of existing functionality</li>
 </ul>
+<doc-anchor-target id="key-outcomes">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#key-outcomes">#</doc-anchor-trigger>
+        <span>Key Outcomes</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Reliable, repeatable device builds</li>
+<li>Reduced staff time and effort for device configuration and delivery</li>
+<li>Compliance with organisational and ITSM requirements</li>
+<li>Accessible, well-documented scripts and processes</li>
+</ul>
+<doc-anchor-target id="code-examples">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#code-examples">#</doc-anchor-trigger>
+        <span>Code examples</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="build-certificate-generate-in-the-post-deployment-script">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#build-certificate-generate-in-the-post-deployment-script">#</doc-anchor-trigger>
+        <span>Build certificate generate in the post-deployment script</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-none"><code v-pre class="language-none">```powershell
+#region Final Certificate Generation
+
+$status.Complete = $true
+$status.EndTime = (Get-Date).ToString('yyyy-MM-dd HH:mm')
+$filename = &quot;build_certificate_$($status.UserName -replace '\s','_')_$(Get-Date -Format 'yyyyMMdd_HHmm').txt&quot;
+$certPath = Join-Path $historyFolder $filename
+$status.CertificatePath = $certPath
+
+    $finalOutput = @(
+    &quot;BUILD CERTIFICATE&quot;,
+    &quot;User: $($status.UserName)&quot;,
+    &quot;Computer: $env:COMPUTERNAME&quot;,
+    &quot;Started: $($status.StartTime)&quot;,
+    &quot;Completed: $($status.EndTime)&quot;,
+    &quot;&quot;,
+    ($status.GetEnumerator() | Where-Object { $_.Key -like 'Step*' } | Sort-Object Name | ForEach-Object { &quot;$($_.Key): $($_.Value)&quot; })
+)
+
+$finalOutput | Set-Content -Path $certPath
+$status | ConvertTo-Json | Set-Content $logPath
+
+Write-Host &quot;\nBuild complete. Certificate written to: $certPath&quot;
+
+#endregion
+```</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="post-deployment-script-code-to-date-assuming-everything-is-checked-for">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#post-deployment-script-code-to-date-assuming-everything-is-checked-for">#</doc-anchor-trigger>
+        <span>Post-deployment script code to date, assuming everything is checked for</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-none"><code v-pre class="language-none">```powershell
+#region Initialization and Pre-Checks
+
+# Ensure BuildStatus folder exists
+$buildFolder = &quot;C:\BuildStatus&quot;
+if (-not (Test-Path $buildFolder)) {
+    New-Item -Path $buildFolder -ItemType Directory -Force
+}
+
+# Check if running in PowerShell 7
+if ($PSVersionTable.PSEdition -ne &quot;Core&quot;) {
+    Write-Host &quot;This script requires PowerShell 7+.&quot;
+    $pwshPath = Get-Command pwsh.exe -ErrorAction SilentlyContinue
+    if (-not $pwshPath) {
+        Write-Host &quot;PowerShell 7 not found. Installing from Microsoft Store...&quot;
+        Start-Process &quot;ms-windows-store://pdp/?productid=9MZ1SNWT0N5D&quot;
+        Read-Host &quot;Install PowerShell 7 and press Enter to continue...&quot;
+    }
+    Write-Host &quot;Launching script in PowerShell 7...&quot;
+    Start-Process pwsh -ArgumentList &quot;-NoExit&quot;, &quot;-File `&quot;$PSCommandPath`&quot;&quot;
+    exit
+}
+
+#endregion
+
+#region Load or initialise Build Status
+
+$logPath = Join-Path $buildFolder 'status.json'
+$historyFolder = Join-Path $buildFolder 'Certificates'
+if (-not (Test-Path $historyFolder)) {
+    New-Item -Path $historyFolder -ItemType Directory -Force
+}
+
+$status = @{}
+$existingBuild = $false
+$buildStartTime = Get-Date
+
+if (Test-Path $logPath) {
+    $status = Get-Content $logPath | ConvertFrom-Json
+    if ($status.Complete -eq $true) {
+        $choice = Read-Host &quot;Build already completed. (V)iew certificate, (R)e-run, or (E)xit?&quot;
+        switch ($choice.ToUpper()) {
+            'V' {
+                Get-Content -Path $status.CertificatePath
+                exit
+            }
+            'R' {
+                Remove-Item $logPath -Force
+                $status = @{}
+            }
+            default {
+                exit
+            }
+        }
+    } else {
+        $existingBuild = $true
+        $continue = Read-Host &quot;Incomplete build found. Continue? (Y/N)&quot;
+        if ($continue -ne 'Y') { exit }
+    }
+}
+
+#endregion
+
+#region Capture User Name and initialise Timestamps
+
+$userName = if ($existingBuild -and $status.UserName) {
+    Read-Host &quot;Confirm or update your name (current: $($status.UserName))&quot;
+} else {
+    Read-Host &quot;Enter your full name to record with this build&quot;
+}
+
+$status.UserName = $userName
+$status.StartTime = $status.StartTime ?? $buildStartTime.ToString('yyyy-MM-dd HH:mm')
+
+#endregion
+
+#region Helper Functions
+
+function Log-Step {
+    param($step, $success, $message)
+    if (-not $success) {
+        Write-Warning &quot;$step failed: $message&quot;
+        $retry = Read-Host &quot;Would you like to retry this step? (Y/N)&quot;
+        if ($retry -eq 'Y') {
+            return 'RETRY'
+        } else {
+            $status[$step] = $false
+            $status | ConvertTo-Json | Set-Content $logPath
+            exit
+        }
+    } else {
+        $status[$step] = $true
+        $status | ConvertTo-Json | Set-Content $logPath
+    }
+}
+
+#endregion
+
+#region Step Functions
+
+function Check-DeviceName {
+    $hostname = $env:COMPUTERNAME
+    if ($hostname -match &quot;^UCW(LAP|WKS)\d{3}$&quot;) {
+        Log-Step -step 'Step1_DeviceName' -success $true -message &quot;&quot;
+    } else {
+        Log-Step -step 'Step1_DeviceName' -success $false -message &quot;Computer name must follow schema UCWLAP### or UCWWKS###.&quot;
+    }
+}
+
+function Check-SecureBoot {
+    try {
+        $sbState = Confirm-SecureBootUEFI
+        Log-Step 'Step2_SecureBoot' ($sbState -eq $true) &quot;Secure Boot is not enabled.&quot;
+    } catch {
+        Log-Step 'Step2_SecureBoot' $false &quot;Secure Boot not supported or inaccessible.&quot;
+    }
+}
+
+function Check-BitLocker {
+    $bitlocker = Get-BitLockerVolume | Where-Object { $_.ProtectionStatus -eq 'On' }
+    Log-Step 'Step3_BitLocker' ($bitlocker -ne $null) &quot;BitLocker is not enabled on any drive.&quot;
+}
+
+function Check-PCR7 {
+    $pcr7 = (Get-ItemProperty -Path &quot;HKLM:\SYSTEM\CurrentControlSet\Control\PCR7\Configuration&quot; -ErrorAction SilentlyContinue).PCR7BindingState
+    Log-Step 'Step4_PCR7' ($pcr7 -eq &quot;Bound&quot;) &quot;PCR7 is not bound.&quot;
+}
+
+function Check-CompanyPortal {
+    $cpInstalled = Get-AppxPackage -Name &quot;Microsoft.CompanyPortal&quot;
+    if ($cpInstalled) {
+        Log-Step 'Step5_CompanyPortal' $true &quot;&quot;
+    } else {
+        Write-Host &quot;Installing Company Portal...&quot;
+        Start-Process &quot;ms-windows-store://pdp/?productid=9wzdncrfj3pz&quot;
+        Read-Host &quot;Install and sign into Company Portal, then press Enter&quot;
+        $cpCheck = Get-AppxPackage -Name &quot;Microsoft.CompanyPortal&quot;
+        Log-Step 'Step5_CompanyPortal' ($cpCheck -ne $null) &quot;Company Portal is still not installed.&quot;
+    }
+}
+
+function Check-OneDrive {
+    $oneDrivePath = &quot;$env:LOCALAPPDATA\Microsoft\OneDrive\OneDrive.exe&quot;
+    $userProfile = &quot;$env:USERPROFILE\OneDrive - *&quot;
+    if ((Test-Path $oneDrivePath) -and (Test-Path $userProfile)) {
+        Log-Step 'Step6_OneDrive' $true &quot;&quot;
+    } else {
+        Start-Process $oneDrivePath
+        Read-Host &quot;Sign into OneDrive then press Enter&quot;
+        if (Test-Path &quot;$env:USERPROFILE\OneDrive - *&quot;) {
+            Log-Step 'Step6_OneDrive' $true &quot;&quot;
+        } else {
+            Log-Step 'Step6_OneDrive' $false &quot;OneDrive is not set up for current user.&quot;
+        }
+    }
+}
+
+function Check-WindowsSecurity {
+    $secHealth = Get-MpComputerStatus
+    $allGreen = $secHealth | Get-Member -MemberType NoteProperty | ForEach-Object { $secHealth.$($_.Name) } | Where-Object { $_ -eq $false } | Measure-Object
+    Log-Step 'Step7_Security' ($allGreen.Count -eq 0) &quot;Windows Security has one or more failing components.&quot;
+}
+
+function Run-WindowsUpdate {
+    $targetBuild = &quot;24H2&quot;
+    $updateSuccess = $false
+    try {
+        Install-Module PSWindowsUpdate -Force -Scope CurrentUser -ErrorAction Stop
+        Import-Module PSWindowsUpdate -ErrorAction Stop
+
+        do {
+            $pending = Get-WindowsUpdate -AcceptAll -Install -AutoReboot -ErrorAction Stop
+            Start-Sleep -Seconds 15
+            $remaining = Get-WindowsUpdate -IsPending -ErrorAction SilentlyContinue
+        } while ($remaining.Count -gt 0)
+
+        $build = (Get-ComputerInfo).WindowsVersion
+        if ($build -notmatch $targetBuild) {
+            Write-Warning &quot;Target build $targetBuild not detected. Manual intervention may be needed.&quot;
+        }
+
+        $updateSuccess = $true
+    } catch {
+        Write-Warning &quot;Windows Update via PSWindowsUpdate failed. Attempting fallback to Windows Settings...&quot;
+        try {
+            Start-Process &quot;ms-settings:windowsupdate&quot;
+            Read-Host &quot;Check for updates manually, ensure they are all installed, then press Enter to continue&quot;
+            $updateSuccess = $true
+        } catch {
+            Log-Step 'Step8_WindowsUpdate' $false &quot;Windows Update fallback failed. $_&quot;
+        }
+    }
+
+    if ($updateSuccess) {
+        $restartRequired = (Get-ItemProperty -Path &quot;HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update\RebootRequired&quot; -ErrorAction SilentlyContinue)
+        $pending = Get-WindowsUpdate -IsPending -ErrorAction SilentlyContinue
+        if ($restartRequired -or $pending.Count -gt 0) {
+            Log-Step 'Step8_WindowsUpdate' $false &quot;Updates still pending or restart required.&quot;
+        } else {
+            Log-Step 'Step8_WindowsUpdate' $true &quot;&quot;
+        }
+    }
+}
+
+
+function Check-OfficeApps {
+    $apps = &quot;Word&quot;, &quot;Excel&quot;, &quot;Outlook&quot;, &quot;Teams&quot;, &quot;PowerPoint&quot;
+    $missing = $apps | Where-Object { -not (Get-Command $_ -ErrorAction SilentlyContinue) }
+    Log-Step 'Step9_OfficeApps' ($missing.Count -eq 0) &quot;Missing Office apps: $($missing -join &quot;, &quot;).&quot;
+}
+
+function Check-Outlook {
+    $outlookProfile = Test-Path &quot;$env:APPDATA\Microsoft\Outlook\*.xml&quot;
+    Log-Step 'Step10_Outlook' $outlookProfile &quot;Outlook is not configured.&quot;
+}
+
+function Check-Edge {
+    $profilePath = &quot;$env:LOCALAPPDATA\Microsoft\Edge\User Data\Default&quot;
+    $preferences = Join-Path $profilePath &quot;Preferences&quot;
+    $signedIn = $false
+    if (Test-Path $preferences) {
+        $prefsJson = Get-Content $preferences -Raw | ConvertFrom-Json
+        $signedIn = $prefsJson.account_info -ne $null
+    }
+    Log-Step 'Step11_Edge' $signedIn &quot;User not signed into Edge profile.&quot;
+}
+
+function Check-RequiredApps {
+    $requiredApps = @(&quot;Netskope&quot;, &quot;Datto RMM&quot;)
+    $running = Get-Process | Select-Object -ExpandProperty Name
+    $found = $requiredApps | Where-Object { $_ -in $running }
+    Log-Step 'Step12_RequiredApps' ($found.Count -eq $requiredApps.Count) &quot;One or more required apps are not running.&quot;
+}
+
+function Check-Teams {
+    $teamsRunning = Get-Process -Name Teams -ErrorAction SilentlyContinue
+    if (-not $teamsRunning) {
+        Start-Process &quot;Teams&quot;
+        Read-Host &quot;Log into Teams, then press Enter&quot;
+    }
+    $teamsDir = &quot;$env:APPDATA\Microsoft\Teams&quot;
+    $signedIn = Test-Path &quot;$teamsDir\storage.json&quot;
+    Log-Step 'Step13_Teams' $signedIn &quot;Microsoft Teams is not signed in.&quot;
+}
+
+#endregion
+
+#region Run Checks
+
+Check-DeviceName
+Check-SecureBoot
+Check-BitLocker
+Check-PCR7
+Check-CompanyPortal
+Check-OneDrive
+Check-WindowsSecurity
+Run-WindowsUpdate
+Check-OfficeApps
+Check-Outlook
+Check-Edge
+Check-RequiredApps
+Check-Teams
+
+#endregion
+
+#region Final Certificate Generation
+
+$status.Complete = $true
+$status.EndTime = (Get-Date).ToString('yyyy-MM-dd HH:mm')
+$filename = &quot;build_certificate_$($status.UserName -replace '\s','_')_$(Get-Date -Format 'yyyyMMdd_HHmm').txt&quot;
+$certPath = Join-Path $historyFolder $filename
+$status.CertificatePath = $certPath
+
+$finalOutput = @(
+    &quot;BUILD CERTIFICATE&quot;,
+    &quot;User: $($status.UserName)&quot;,
+    &quot;Computer: $env:COMPUTERNAME&quot;,
+    &quot;Started: $($status.StartTime)&quot;,
+    &quot;Completed: $($status.EndTime)&quot;,
+    &quot;&quot;,
+    ($status.GetEnumerator() | Where-Object { $_.Key -like 'Step*' } | Sort-Object Name | ForEach-Object { &quot;$($_.Key): $($_.Value)&quot; })
+)
+
+$finalOutput | Set-Content -Path $certPath
+$status | ConvertTo-Json | Set-Content $logPath
+
+Write-Host &quot;\nBuild complete. Certificate written to: $certPath&quot;
+
+#endregion
+```</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -263,16 +706,16 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">Project Idea: Windows​Build​Certificate</span>
+                                                <span class="block mt-1">Project Idea</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../contributing/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../issues/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                                <span class="block mt-1">Contributing</span>
+                                                <span class="block mt-1">Issues</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -316,6 +759,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Specification: WindowsBuildCertificate", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 2345, tocLabel: "On this page" }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Specification", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 2345, tocLabel: "On this page" }</script>
 </body>
 </html>
