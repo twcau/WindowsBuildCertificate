@@ -44,8 +44,14 @@ search:
 
 generator:
   directoryIndex:
+    name: index.html
     append: true
     paths: relative
+    altNames:
+      - index.html
+      - index.htm
+      - default.html
+      - default.htm
   recase: none
   trailingSlash: false # default is true
 
