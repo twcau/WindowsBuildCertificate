@@ -1,9 +1,4 @@
-# Ignore build, logs, and temp files
-*.log
-*.tmp
-*.bak
-*.swp
-*.old
+# Folders to ignore
 .DS_Store
 node_modules/
 dist/
@@ -12,6 +7,13 @@ output/
 .idea/
 .env
 __pycache__/
+.website/
+# File wildcards to ignore
+*.log
+*.tmp
+*.bak
+*.swp
+*.old
 *.pyc
 *.pyo
 *.pyd
@@ -20,5 +22,6 @@ __pycache__/
 *.sublime-workspace
 *.sublime-project
 *.code-workspace
-# Ignore Retype input
-.website/
+# Files specifc to ignore
+.github/copilot-instructions.md
+WindowsBuildCertificate.code-workspace

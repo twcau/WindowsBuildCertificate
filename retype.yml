@@ -4,15 +4,17 @@ output: docs
 url: https://twcau.github.io/WindowsBuildCertificate/
 title: WindowsBuildCertificate
 theme: auto
-branding:
-  logo: /resources/logo.png
-  label: WindowsBuildCertificate
+# branding:
+#  logo: /resources/logo.png
+#  label: WindowsBuildCertificate
 github:
   repo: twcau/WindowsBuildCertificate
   branch: main
 links:
-  - text: GitHub
+  - text: GitHub Repository
     link: https://github.com/twcau/WindowsBuildCertificate
+  - text: GitHub Issues
+    link: https://github.com/twcau/WindowsBuildCertificate/issues
 order:
   - .website/project-overview
   - .website/user-guides

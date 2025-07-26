@@ -1,10 +1,13 @@
 <!-- omit from toc -->
-
 # WindowsBuildCertificate
 
 A PowerShell 7 automation and validation toolkit for Windows device build certification. This project ensures all required software, settings, and configurations are completed, validated, and documented for ITSM and compliance.
 
+> [!WARNING] Extreme Alpha - Not even close to being intended for prime time
+> This repository is still under major development and testing, and isn't even close to being ready for prime time use. It's great that you're interested in it however, and feel welcome to let me know if you feel there's anything that could be done or enhanced as I get this ready.
+
 ## Table of Contents
+- [Table of Contents](#table-of-contents)
 - [Project Overview](#project-overview)
 - [Features](#features)
 - [Getting Started](#getting-started)
@@ -23,6 +26,8 @@ A PowerShell 7 automation and validation toolkit for Windows device build certif
 
 WindowsBuildCertificate automates and validates the build process for Windows devices, ensuring all required steps are completed and documented. It supports pre- and post-deployment scripting, user prompts, and robust logging for ITSM workflows.
 
+For more information, please see [Project Overview](https://twcau.github.io/WindowsBuildCertificate/project-overview/specification/).
+
 ## Features
 
 - Modular PowerShell 7 scripts for pre/post build
@@ -31,10 +36,13 @@ WindowsBuildCertificate automates and validates the build process for Windows de
 - Intune and AD join validation
 - Build certificate generation and export
 - Robust logging, error handling, and accessibility
-- Exportable scripts for OOBE and post-deployment
-- Retype static documentation site
+- Exportable scripts for OOBE and post-deployment integration
+
+For more information, please see [Features](https://twcau.github.io/WindowsBuildCertificate/project-overview/specification/).
 
 ## Getting Started
+
+For more information, please see [Getting Started](https://twcau.github.io/WindowsBuildCertificate/user-guides/getting-started/).
 
 1. Clone the repository and review the documentation.
 2. Configure your build steps and modules as needed.
@@ -46,27 +54,22 @@ WindowsBuildCertificate automates and validates the build process for Windows de
 - See `modules/` for reusable functions.
 - See `tests/` for Pester and validation scripts.
 
+For more information, please see [Menu Structure](https://twcau.github.io/WindowsBuildCertificate/user-guides/menu-structure/).
+
 ## Folder Structure
 
-```plaintext
-scripts/        # Main PowerShell scripts for build and export
-modules/        # PowerShell modules and reusable functions
-tests/          # Pester and validation scripts
-resources/      # Supporting files and assets
-.github/        # Copilot and GitHub configuration
-.vscode/        # VS Code tasks and settings
-.website/       # Retype documentation source
-docs/           # Retype-generated static site (do not edit directly)
-```
+For more information, please see [Folder Structure](https://twcau.github.io/WindowsBuildCertificate/project-overview/folder-structure/).
 
 ## Modules and Functions
 
-See [MODULES.md](MODULES.md) for a full list of modules and functions.
+For more information, please see [Modules and Functions](https://twcau.github.io/WindowsBuildCertificate/code/modules/).
 
 ## Testing
 
 - Pester tests for critical functions
 - Manual and automated validation steps
+
+For more information, please see [Testing](https://twcau.github.io/WindowsBuildCertificate/user-guides/testing/).
 
 ## Logging and Troubleshooting
 
@@ -77,13 +80,15 @@ See [MODULES.md](MODULES.md) for a full list of modules and functions.
 
 - All scripts and documentation follow accessibility and EN-AU standards
 
+For more information, please see [Accessibility](https://twcau.github.io/WindowsBuildCertificate/user-guides/accessibility/).
+
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+For guidelines, please see [Contributing](https://twcau.github.io/WindowsBuildCertificate/contributing/contributing/).
 
 ## Changelog
 
-See [CHANGELOG.md](CHANGELOG.md) for release history.
+For release history, please see [Changelog](https://twcau.github.io/WindowsBuildCertificate/CHANGELOG/).
 
 ## License
 
@@ -91,4 +96,4 @@ MIT License. See [LICENSE](LICENSE).
 
 ## Contact and Support
 
-For support, see [SUPPORT.md](.website/support/support.md) or open a GitHub issue.
+For support or to open a GitHub issue, please see [Support](https://twcau.github.io/WindowsBuildCertificate/support/support/).
