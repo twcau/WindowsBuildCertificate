@@ -1,20 +1,30 @@
 # Retype configuration for WindowsBuildCertificate
+start:
+  pro: true
 input: .website
 output: docs
 url: https://twcau.github.io/WindowsBuildCertificate/
 title: WindowsBuildCertificate
-theme: auto
-# branding:
+locale: en
+branding:
+  title: WindowsBuildCertificate
+  label: Docs
 #  logo: /resources/logo.png
 #  label: WindowsBuildCertificate
+
+meta:
+  title: " | WindowsBuildCertificate - Manage pre and post build computer setup processes with ease"
+
 github:
   repo: twcau/WindowsBuildCertificate
   branch: main
+
 links:
   - text: GitHub Repository
     link: https://github.com/twcau/WindowsBuildCertificate
   - text: GitHub Issues
     link: https://github.com/twcau/WindowsBuildCertificate/issues
+
 order:
   - .website/project-overview
   - .website/user-guides
@@ -23,3 +33,34 @@ order:
   - .website/code
   - .website/support
   - .website/buy-me-a-kofi
+
+search:
+  hotkeys:
+    - "/"
+  minChars: 3
+  mode: partial
+  noResultsFoundMsg: Sorry, no results found.
+  preload: true
+
+generator:
+  directoryIndex:
+    append: true
+    paths: relative
+  recase: none
+  trailingSlash: false # default is true
+
+breadcrumb:
+  enabled: true # Enabled project wide
+  home: Home # custom label
+  separator: "|"
+
+snippets:
+  lineNumbers:
+    - powershell
+    - js
+    - json
+    - text
+    - html
+
+footer:
+  copyright: "© Copyright {{ year }}. [Example, Inc.](https://example.com/) All rights reserved."
