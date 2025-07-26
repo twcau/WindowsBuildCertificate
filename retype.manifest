@@ -1,6 +1,6 @@
 {
   "version": "3.11.0",
-  "created": "2025-07-26T11:29:44Z",
+  "created": "2025-07-26T11:47:36Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -9,12 +9,17 @@
       "path": "404.html"
     },
     {
+      "path": "categories\\howto\\index.html"
+    },
+    {
+      "path": "categories\\index.html"
+    },
+    {
       "path": "changelog/index.html",
       "old": true
     },
     {
-      "path": "changelog\\index.html",
-      "old": true
+      "path": "changelog\\index.html"
     },
     {
       "path": "CHANGELOG\\index.html",
@@ -29,12 +34,10 @@
       "old": true
     },
     {
-      "path": "code\\index.html",
-      "old": true
+      "path": "code\\index.html"
     },
     {
-      "path": "code\\modules\\index.html",
-      "old": true
+      "path": "code\\modules\\index.html"
     },
     {
       "path": "contributing/contributing/index.html",
@@ -45,12 +48,10 @@
       "old": true
     },
     {
-      "path": "contributing\\contributing\\index.html",
-      "old": true
+      "path": "contributing\\contributing\\index.html"
     },
     {
-      "path": "contributing\\index.html",
-      "old": true
+      "path": "contributing\\index.html"
     },
     {
       "path": "index.html"
@@ -80,27 +81,25 @@
       "old": true
     },
     {
-      "path": "issues\\index.html",
-      "old": true
+      "path": "issues\\index.html"
     },
     {
-      "path": "issues\\knownissues\\index.html",
-      "old": true
+      "path": "issues\\knownissues\\index.html"
     },
     {
-      "path": "issues\\todo-code\\index.html",
-      "old": true
+      "path": "issues\\todo-code\\index.html"
     },
     {
-      "path": "issues\\todo-snippets\\index.html",
-      "old": true
+      "path": "issues\\todo-snippets\\index.html"
     },
     {
-      "path": "issues\\todo-tree\\index.html",
-      "old": true
+      "path": "issues\\todo-tree\\index.html"
     },
     {
-      "path": "issues\\todo\\index.html",
+      "path": "issues\\todo\\index.html"
+    },
+    {
+      "path": "license",
       "old": true
     },
     {
@@ -108,8 +107,7 @@
       "old": true
     },
     {
-      "path": "license\\index.html",
-      "old": true
+      "path": "license\\index.html"
     },
     {
       "path": "LICENSE\\index.html",
@@ -132,20 +130,16 @@
       "old": true
     },
     {
-      "path": "project-overview\\design-philosophy\\index.html",
-      "old": true
+      "path": "project-overview\\design-philosophy\\index.html"
     },
     {
-      "path": "project-overview\\folder-structure\\index.html",
-      "old": true
+      "path": "project-overview\\folder-structure\\index.html"
     },
     {
-      "path": "project-overview\\idea\\index.html",
-      "old": true
+      "path": "project-overview\\idea\\index.html"
     },
     {
-      "path": "project-overview\\specification\\index.html",
-      "old": true
+      "path": "project-overview\\specification\\index.html"
     },
     {
       "path": "resources/css/retype.css",
@@ -215,8 +209,7 @@
       "path": "resources\\js\\lunr.js"
     },
     {
-      "path": "resources\\js\\prism.js",
-      "old": true
+      "path": "resources\\js\\prism.js"
     },
     {
       "path": "resources\\js\\retype.js"
@@ -258,20 +251,17 @@
       "old": true
     },
     {
-      "path": "support\\index.html",
-      "old": true
+      "path": "support\\index.html"
     },
     {
-      "path": "support\\support\\index.html",
-      "old": true
+      "path": "support\\support\\index.html"
     },
     {
       "path": "testing/index.html",
       "old": true
     },
     {
-      "path": "testing\\index.html",
-      "old": true
+      "path": "testing\\index.html"
     },
     {
       "path": "TESTING\\index.html",
@@ -282,8 +272,7 @@
       "old": true
     },
     {
-      "path": "todo\\index.html",
-      "old": true
+      "path": "todo\\index.html"
     },
     {
       "path": "TODO\\index.html",
@@ -326,24 +315,23 @@
       "old": true
     },
     {
-      "path": "user-guides\\accessibility\\index.html",
-      "old": true
+      "path": "user-guides\\accessibility\\index.html"
     },
     {
       "path": "user-guides\\backup-and-restore\\index.html",
       "old": true
     },
     {
-      "path": "user-guides\\getting-started\\index.html",
-      "old": true
+      "path": "user-guides\\getting-started\\backup-and-restore\\index.html"
     },
     {
-      "path": "user-guides\\index.html",
-      "old": true
+      "path": "user-guides\\getting-started\\index.html"
     },
     {
-      "path": "user-guides\\menu-structure\\index.html",
-      "old": true
+      "path": "user-guides\\index.html"
+    },
+    {
+      "path": "user-guides\\menu-structure\\index.html"
     },
     {
       "path": "user-guides\\testing-code\\index.html",
@@ -358,8 +346,16 @@
       "old": true
     },
     {
-      "path": "user-guides\\testing\\index.html",
-      "old": true
+      "path": "user-guides\\testing\\index.html"
+    },
+    {
+      "path": "user-guides\\testing\\testing-code\\index.html"
+    },
+    {
+      "path": "user-guides\\testing\\testing-snippets\\index.html"
+    },
+    {
+      "path": "user-guides\\testing\\testing-tree\\index.html"
     }
   ]
 }
