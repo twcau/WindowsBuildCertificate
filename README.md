@@ -47,8 +47,20 @@ For more information, please see [Features](https://twcau.github.io/WindowsBuild
 For more information, please see [Getting Started](https://twcau.github.io/WindowsBuildCertificate/user-guides/getting-started/).
 
 1. Clone the repository and review the documentation.
-2. Configure your build steps and modules as needed.
-3. Use the provided scripts to automate and validate your device builds.
+
+    ```powershell
+    git clone https://github.com/twcau/WindowsBuildCertificate
+    cd WindowsBuildCertificate
+    ```
+
+2. Run the entry script:
+
+    ```powershell
+    .\WindowsBuildCertificate.ps1
+    ```
+
+3. Configure your build steps and modules as needed. Information on menu options for navigation is available from [Menu Structure](https://twcau.github.io/WindowsBuildCertificate/user-guides/menu-structure/).
+4. Use the provided scripts to automate and validate your device builds.
 
 ## Usage
 
