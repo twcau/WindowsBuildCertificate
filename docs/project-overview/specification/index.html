@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/WindowsBuildCertificate">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806849225290">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806860741592">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,11 +31,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.806849225290" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.806860741592" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.806849225290" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.806860741592" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.806849225290" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.806860741592" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -215,6 +215,9 @@
 <li><doc-anchor-trigger to="#requirements">Requirements</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#success-criteria">Success Criteria</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#key-outcomes">Key Outcomes</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#menu-presentation">Menu Presentation</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#logging">Logging</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#errorwarning-handling">Error/Warning Handling</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#code-examples">Code examples</doc-anchor-trigger>
 <ul>
 <li><doc-anchor-trigger to="#build-certificate-generate-in-the-post-deployment-script">Build certificate generate in the post-deployment script</doc-anchor-trigger></li>
@@ -348,6 +351,38 @@
 <li>Reduced staff time and effort for device configuration and delivery</li>
 <li>Compliance with organisational and ITSM requirements</li>
 <li>Accessible, well-documented scripts and processes</li>
+</ul>
+<doc-anchor-target id="menu-presentation">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#menu-presentation">#</doc-anchor-trigger>
+        <span>Menu Presentation</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>All menu titles must use blue (cyan) for visibility.</li>
+<li>Documentation/resources in help menus must use purple (magenta).</li>
+<li>All other output must be accessible and clear.</li>
+</ul>
+<doc-anchor-target id="logging">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#logging">#</doc-anchor-trigger>
+        <span>Logging</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Use two log files: transcript (session) and custom (actions/errors).</li>
+<li>All menu actions, errors, and warnings must be logged in the custom log file.</li>
+<li>No direct writes to the transcript file except via Start-Transcript.</li>
+</ul>
+<doc-anchor-target id="errorwarning-handling">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#errorwarning-handling">#</doc-anchor-trigger>
+        <span>Error/Warning Handling</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Errors and warnings are shown in colour in the terminal.</li>
+<li>All details are logged in the custom log file.</li>
 </ul>
 <doc-anchor-target id="code-examples">
     <h2>

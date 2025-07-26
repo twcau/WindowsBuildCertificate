@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/WindowsBuildCertificate">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806849225290">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806860741592">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>Modules and Functions | WindowsBuildCertificate</title>
     <meta name="title" content="Modules and Functions | WindowsBuildCertificate">
-    <meta name="description" content="This document lists all modules and functions in the WindowsBuildCertificate project, with a summary of their purpose and usage.">
+    <meta name="description" content="All CLI modules present menu titles in blue (cyan) and documentation/resources in purple (magenta).">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://twcau.github.io/WindowsBuildCertificate/code/modules/">
@@ -21,21 +21,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://twcau.github.io/WindowsBuildCertificate/code/modules/">
     <meta property="og:title" content="Modules and Functions | WindowsBuildCertificate">
-    <meta property="og:description" content="This document lists all modules and functions in the WindowsBuildCertificate project, with a summary of their purpose and usage.">
+    <meta property="og:description" content="All CLI modules present menu titles in blue (cyan) and documentation/resources in purple (magenta).">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://twcau.github.io/WindowsBuildCertificate/code/modules/">
     <meta property="twitter:title" content="Modules and Functions | WindowsBuildCertificate">
-    <meta property="twitter:description" content="This document lists all modules and functions in the WindowsBuildCertificate project, with a summary of their purpose and usage.">
+    <meta property="twitter:description" content="All CLI modules present menu titles in blue (cyan) and documentation/resources in purple (magenta).">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.806849225290" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.806860741592" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.806849225290" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.806860741592" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.806849225290" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.806860741592" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -205,6 +205,26 @@
         <span>Modules and Functions</span>
     </h1>
 </doc-anchor-target>
+<doc-anchor-target id="cli-modules">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cli-modules">#</doc-anchor-trigger>
+        <span>CLI Modules</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>All CLI modules present menu titles in blue (cyan) and documentation/resources in purple (magenta).</li>
+<li>All menu actions, errors, and warnings are logged using Write-Log, which writes only to the custom log file.</li>
+<li>User-facing output is always accessible and free of technical log details.</li>
+</ul>
+<doc-anchor-target id="logging-module">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#logging-module">#</doc-anchor-trigger>
+        <span>Logging Module</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Write-Log: Accepts message, level, menu option, and log file. Writes full detail to the custom log file and only user-facing messages to the terminal, with appropriate colour.</li>
+</ul>
 <p>This document lists all modules and functions in the WindowsBuildCertificate project, with a summary of their purpose and usage.</p>
 <doc-anchor-target id="modules">
     <h2>
@@ -212,13 +232,98 @@
         <span>Modules</span>
     </h2>
 </doc-anchor-target>
+<doc-anchor-target id="logging-modulesloggingpsm1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#logging-modulesloggingpsm1">#</doc-anchor-trigger>
+        <span>Logging (modules/Logging.psm1)</span>
+    </h3>
+</doc-anchor-target>
 <ul>
-<li><code v-pre>BuildCertificate</code>: Core logic for build validation and certificate generation</li>
-<li><code v-pre>DeviceChecks</code>: Functions for device name, Secure Boot, BitLocker, PCR7, etc.</li>
-<li><code v-pre>AppChecks</code>: Functions for Company Portal, OneDrive, Office 365, Teams, Edge, and required apps</li>
-<li><code v-pre>IntuneADChecks</code>: Functions for Intune, AD join, and sync validation</li>
-<li><code v-pre>ExportScripts</code>: Logic for OOBE and post-deployment script export</li>
-<li><code v-pre>Logging</code>: Standardised logging and error handling</li>
+<li>Standardised logging and error handling for all scripts and modules.</li>
+</ul>
+<doc-anchor-target id="logscli-moduleslogsclipsm1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#logscli-moduleslogsclipsm1">#</doc-anchor-trigger>
+        <span>LogsCLI (modules/LogsCLI.psm1)</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><p>Provides all log management CLI, menu, and functions for WindowsBuildCertificate.</p>
+</li>
+<li><p><strong>Functions:</strong></p>
+<ul>
+<li><code v-pre>Get-LogsMenu</code>: Displays the logs menu and routes user choices to log management actions.</li>
+<li><code v-pre>Get-CurrentSessionLog</code>: Opens the current session log file in Notepad for review.</li>
+<li><code v-pre>Get-PastSessionLogs</code>: Allows selection and viewing of past session logs, with Out-GridView or console fallback.</li>
+<li><code v-pre>Save-OldLogs</code>: Compresses previous months&#x27; logs into a zip archive and removes originals.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="deploymentcli-modulesdeploymentclipsm1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#deploymentcli-modulesdeploymentclipsm1">#</doc-anchor-trigger>
+        <span>DeploymentCLI (modules/DeploymentCLI.psm1)</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><p>Provides deployment script configuration management CLI and menu for WindowsBuildCertificate.</p>
+</li>
+<li><p><strong>Functions:</strong></p>
+<ul>
+<li><code v-pre>Show-DeploymentMenu</code>: Displays the deployment configuration management menu and routes user choices.</li>
+<li><code v-pre>New-DeploymentConfig</code>: Creates a new deployment script configuration (stub; logic to be implemented).</li>
+<li><code v-pre>Edit-DeploymentConfig</code>: Edits an existing deployment script configuration (stub; logic to be implemented).</li>
+<li><code v-pre>Export-DeploymentScripts</code>: Exports scripts from an existing deployment script configuration (stub; logic to be implemented).</li>
+<li><code v-pre>Save-OldDeploymentConfigs</code>: Archives deployment configurations not used in the last 90 days (stub; logic to be implemented).</li>
+<li><code v-pre>Restore-ArchivedDeploymentConfig</code>: Retrieves an archived deployment configuration (stub; logic to be implemented).</li>
+<li><code v-pre>Edit-DefaultDeploymentConfig</code>: Creates or edits the default configuration for all new deployment scripts (stub; logic to be implemented).</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="buildcertificate-modulesbuildcertificatepsm1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#buildcertificate-modulesbuildcertificatepsm1">#</doc-anchor-trigger>
+        <span>BuildCertificate (modules/BuildCertificate.psm1)</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Core logic for build validation and certificate generation.</li>
+</ul>
+<doc-anchor-target id="devicechecks-modulesdevicecheckspsm1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#devicechecks-modulesdevicecheckspsm1">#</doc-anchor-trigger>
+        <span>DeviceChecks (modules/DeviceChecks.psm1)</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Functions for device name, Secure Boot, BitLocker, PCR7, and other device compliance checks.</li>
+</ul>
+<doc-anchor-target id="appchecks-modulesappcheckspsm1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#appchecks-modulesappcheckspsm1">#</doc-anchor-trigger>
+        <span>AppChecks (modules/AppChecks.psm1)</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Functions for Company Portal, OneDrive, Office 365, Teams, Edge, and required application checks.</li>
+</ul>
+<doc-anchor-target id="intuneadchecks-modulesintuneadcheckspsm1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#intuneadchecks-modulesintuneadcheckspsm1">#</doc-anchor-trigger>
+        <span>IntuneADChecks (modules/IntuneADChecks.psm1)</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Functions for Intune, AD join, and sync validation.</li>
+</ul>
+<doc-anchor-target id="exportscripts-modulesexportscriptspsm1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#exportscripts-modulesexportscriptspsm1">#</doc-anchor-trigger>
+        <span>ExportScripts (modules/ExportScripts.psm1)</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Logic for OOBE and post-deployment script export.</li>
 </ul>
 <doc-anchor-target id="function-list">
     <h2>
