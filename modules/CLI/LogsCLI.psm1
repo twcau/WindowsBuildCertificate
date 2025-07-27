@@ -44,9 +44,45 @@ function Get-LogsMenu {
     if ([string]::IsNullOrWhiteSpace($logChoice)) { $logChoice = '4' }
     Write-Log -Message ("User selected logs menu option: {0}" -f $logChoice) -Level 'Action' -MenuOption $logChoice -LogFile $LogFile
     switch ($logChoice) {
-        '1' { Get-CurrentSessionLog -LogFile $LogFile -LogDirectory $LogDirectory }
-        '2' { Get-PastSessionLogs -LogDirectory $LogDirectory }
-        '3' { Save-OldLogs -LogDirectory $LogDirectory }
+        '1' {
+            try {
+                Get-CurrentSessionLog -LogFile $LogFile -LogDirectory $LogDirectory
+            }
+            catch {
+                Write-Log -Message ("Error in Get-CurrentSessionLog: {0}" -f $_) -Level 'Error' -LogFile $LogFile
+                Write-Host "An error occurred: $($_.Exception.Message)" -ForegroundColor Red
+                Write-Host 'Press Enter to return to the logs menu.' -ForegroundColor Yellow
+                Read-Host
+                Get-LogsMenu -LogDirectory $LogDirectory -LogFile $LogFile
+                return
+            }
+        }
+        '2' {
+            try {
+                Get-PastSessionLogs -LogDirectory $LogDirectory
+            }
+            catch {
+                Write-Log -Message ("Error in Get-PastSessionLogs: {0}" -f $_) -Level 'Error' -LogFile $LogFile
+                Write-Host "An error occurred: $($_.Exception.Message)" -ForegroundColor Red
+                Write-Host 'Press Enter to return to the logs menu.' -ForegroundColor Yellow
+                Read-Host
+                Get-LogsMenu -LogDirectory $LogDirectory -LogFile $LogFile
+                return
+            }
+        }
+        '3' {
+            try {
+                Save-OldLogs -LogDirectory $LogDirectory
+            }
+            catch {
+                Write-Log -Message ("Error in Save-OldLogs: {0}" -f $_) -Level 'Error' -LogFile $LogFile
+                Write-Host "An error occurred: $($_.Exception.Message)" -ForegroundColor Red
+                Write-Host 'Press Enter to return to the logs menu.' -ForegroundColor Yellow
+                Read-Host
+                Get-LogsMenu -LogDirectory $LogDirectory -LogFile $LogFile
+                return
+            }
+        }
         '4' { Write-Log -Message 'User exited logs menu.' -Level 'Info' -LogFile $LogFile; return }
         default { Write-Log -Message ("Invalid logs menu selection: {0}" -f $logChoice) -Level 'Warning' -LogFile $LogFile; Write-Log -Message 'Invalid selection. Please choose 1-4.' -Level 'Warning' -LogFile $LogFile; Get-LogsMenu -LogDirectory $LogDirectory -LogFile $LogFile }
     }
@@ -78,13 +114,14 @@ function Get-CurrentSessionLog {
         Write-Log -Message ("Opened current session log: {0}" -f $LogFile) -Level 'Info' -LogFile $LogFile
         Write-Log -Message 'Current session log file has been opened in Notepad.' -Level 'Action' -LogFile $LogFile
         Write-Log -Message 'Press Enter to return to the logs menu.' -Level 'Info' -LogFile $LogFile
+        Write-Host 'Current session log file has been opened in Notepad.' -ForegroundColor Green
+        Write-Host 'Press Enter to return to the logs menu.' -ForegroundColor Yellow
         Read-Host
-
     }
     else {
-        Write-Log -Message ("Current session log not found: {0}" -f $LogFile) -Level 'Warning' -LogFile $LogFile
-        Write-Log -Message 'Current session log not found.' -Level 'Error' -LogFile $LogFile
-        Write-Log -Message 'Press Enter to return to the logs menu.' -Level 'Info' -LogFile $LogFile
+        Write-Log -Message ("Log file not found: {0}" -f $LogFile) -Level 'Error' -LogFile $LogFile
+        Write-Host 'Log file not found.' -ForegroundColor Red
+        Write-Host 'Press Enter to return to the logs menu.' -ForegroundColor Yellow
         Read-Host
     }
     Get-LogsMenu -LogDirectory $LogDirectory -LogFile $LogFile

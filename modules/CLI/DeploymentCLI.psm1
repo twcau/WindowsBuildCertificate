@@ -13,7 +13,7 @@
 .NOTES          EN-AU spelling and accessible output throughout.
 #>
 
-function Show-DeploymentMenu {
+function Show-DeploymentConfigMenu {
     <#
     .SYNOPSIS
         Displays the deployment script configuration management menu and handles user selection.
@@ -24,7 +24,7 @@ function Show-DeploymentMenu {
     .PARAMETER logFile
         The current session log file path.
     .EXAMPLE
-        Show-DeploymentMenu -ConfigDirectory $ConfigDirectory -logFile $logFile
+        Show-DeploymentConfigMenu -ConfigDirectory $ConfigDirectory -logFile $logFile
     .NOTES
         EN-AU spelling and accessible output throughout.
     #>
@@ -47,14 +47,14 @@ function Show-DeploymentMenu {
     if ([string]::IsNullOrWhiteSpace($choice)) { $choice = '7' }
     Write-Log -Message ("User selected deployment menu option: {0}" -f $choice) -Level 'Action' -MenuOption $choice -LogFile $logFile
     switch ($choice) {
-        '1' { New-DeploymentConfig -ConfigDirectory $ConfigDirectory -logFile $logFile }
-        '2' { Edit-DeploymentConfig -ConfigDirectory $ConfigDirectory -logFile $logFile }
-        '3' { Export-DeploymentScripts -ConfigDirectory $ConfigDirectory -logFile $logFile }
-        '4' { Remove-OldDeploymentConfigs -ConfigDirectory $ConfigDirectory -logFile $logFile }
-        '5' { Restore-ArchivedDeploymentConfig -ConfigDirectory $ConfigDirectory -logFile $logFile }
-        '6' { Edit-DefaultDeploymentConfig -ConfigDirectory $ConfigDirectory -logFile $logFile }
+        '1' { try { New-DeploymentConfig -ConfigDirectory $ConfigDirectory -logFile $logFile } catch { Write-Log -Message ("Error in New-DeploymentConfig: {0}" -f $_) -Level 'Error' -LogFile $logFile; Write-Host "An error occurred: $($_.Exception.Message)" -ForegroundColor Red; Write-Host 'Press Enter to return to the deployment menu.' -ForegroundColor Yellow; Read-Host; Show-DeploymentConfigMenu -ConfigDirectory $ConfigDirectory -logFile $logFile; return } }
+        '2' { try { Edit-DeploymentConfig -ConfigDirectory $ConfigDirectory -logFile $logFile } catch { Write-Log -Message ("Error in Edit-DeploymentConfig: {0}" -f $_) -Level 'Error' -LogFile $logFile; Write-Host "An error occurred: $($_.Exception.Message)" -ForegroundColor Red; Write-Host 'Press Enter to return to the deployment menu.' -ForegroundColor Yellow; Read-Host; Show-DeploymentConfigMenu -ConfigDirectory $ConfigDirectory -logFile $logFile; return } }
+        '3' { try { Export-DeploymentScripts -ConfigDirectory $ConfigDirectory -logFile $logFile } catch { Write-Log -Message ("Error in Export-DeploymentScripts: {0}" -f $_) -Level 'Error' -LogFile $logFile; Write-Host "An error occurred: $($_.Exception.Message)" -ForegroundColor Red; Write-Host 'Press Enter to return to the deployment menu.' -ForegroundColor Yellow; Read-Host; Show-DeploymentConfigMenu -ConfigDirectory $ConfigDirectory -logFile $logFile; return } }
+        '4' { try { Remove-OldDeploymentConfigs -ConfigDirectory $ConfigDirectory -logFile $logFile } catch { Write-Log -Message ("Error in Remove-OldDeploymentConfigs: {0}" -f $_) -Level 'Error' -LogFile $logFile; Write-Host "An error occurred: $($_.Exception.Message)" -ForegroundColor Red; Write-Host 'Press Enter to return to the deployment menu.' -ForegroundColor Yellow; Read-Host; Show-DeploymentConfigMenu -ConfigDirectory $ConfigDirectory -logFile $logFile; return } }
+        '5' { try { Restore-ArchivedDeploymentConfig -ConfigDirectory $ConfigDirectory -logFile $logFile } catch { Write-Log -Message ("Error in Restore-ArchivedDeploymentConfig: {0}" -f $_) -Level 'Error' -LogFile $logFile; Write-Host "An error occurred: $($_.Exception.Message)" -ForegroundColor Red; Write-Host 'Press Enter to return to the deployment menu.' -ForegroundColor Yellow; Read-Host; Show-DeploymentConfigMenu -ConfigDirectory $ConfigDirectory -logFile $logFile; return } }
+        '6' { try { Edit-DefaultDeploymentConfig -ConfigDirectory $ConfigDirectory -logFile $logFile } catch { Write-Log -Message ("Error in Edit-DefaultDeploymentConfig: {0}" -f $_) -Level 'Error' -LogFile $logFile; Write-Host "An error occurred: $($_.Exception.Message)" -ForegroundColor Red; Write-Host 'Press Enter to return to the deployment menu.' -ForegroundColor Yellow; Read-Host; Show-DeploymentConfigMenu -ConfigDirectory $ConfigDirectory -logFile $logFile; return } }
         '7' { Write-Log -Message 'User exited deployment menu.' -Level 'Info' -LogFile $logFile; return }
-        default { Write-Log -Message ("Invalid deployment menu selection: {0}" -f $choice) -Level 'Warning' -LogFile $logFile; Write-Log -Message 'Invalid selection. Please choose 1-7.' -Level 'Warning' -LogFile $logFile; Show-DeploymentMenu -ConfigDirectory $ConfigDirectory -logFile $logFile }
+        default { Write-Log -Message ("Invalid deployment menu selection: {0}" -f $choice) -Level 'Warning' -LogFile $logFile; Write-Log -Message 'Invalid selection. Please choose 1-7.' -Level 'Warning' -LogFile $logFile; Show-DeploymentConfigMenu -ConfigDirectory $ConfigDirectory -logFile $logFile }
     }
 }
 
@@ -79,14 +79,14 @@ function New-DeploymentConfig {
     Write-Log -Message 'Yet to be created' -Level 'Warning' -LogFile $logFile
     Write-Log -Message 'Press enter to return to main menu' -Level 'Info' -LogFile $logFile
     Read-Host
-    Show-DeploymentMenu -ConfigDirectory $ConfigDirectory -logFile $logFile
+    Show-DeploymentConfigMenu -ConfigDirectory $ConfigDirectory -logFile $logFile
 }
 function Edit-DeploymentConfig {
     <#
     .SYNOPSIS
-        Stub for editing an existing deployment script configuration.
+        Entry point for editing an existing deployment script configuration.
     .DESCRIPTION
-        Placeholder for future implementation. Logs the action and prompts the user to return to the menu.
+        Handles file locking, invokes category selection, and manages the edit workflow.
     .PARAMETER ConfigDirectory
         The directory where deployment configurations are stored.
     .PARAMETER logFile
@@ -98,12 +98,135 @@ function Edit-DeploymentConfig {
     #>
     param([string]$ConfigDirectory, [string]$logFile)
     Write-Log -Message '[Stub] Edit existing deployment script configuration called.' -Level 'Info' -LogFile $logFile
-    Write-Log -Message '[Stub] Edit existing deployment script configuration logic goes here.' -Level 'Error' -LogFile $logFile
-    Write-Log -Message 'Yet to be created' -Level 'Warning' -LogFile $logFile
-    Write-Log -Message 'Press enter to return to main menu' -Level 'Info' -LogFile $logFile
+    Write-Host '[Stub] Edit existing deployment script configuration logic goes here.' -ForegroundColor Yellow
+    Write-Host 'Yet to be created' -ForegroundColor Red
+    Write-Host 'Press Enter to return to the previous menu' -ForegroundColor Yellow
     Read-Host
-    Show-DeploymentMenu -ConfigDirectory $ConfigDirectory -logFile $logFile
+    Show-DeploymentConfigMenu -ConfigDirectory $ConfigDirectory -logFile $logFile
 }
+
+function Show-EditConfigMenu {
+    <#
+    .SYNOPSIS
+        Shows the main edit workflow menu for a selected config.
+    .DESCRIPTION
+        Allows category selection, dry-run, change history, and save/exit/discard.
+    .PARAMETER ConfigDirectory
+        The directory where deployment configurations are stored.
+    .PARAMETER logFile
+        The current session log file path.
+    .EXAMPLE
+        Show-EditConfigMenu -ConfigDirectory $ConfigDirectory -logFile $logFile
+    .NOTES
+        EN-AU spelling and accessible output throughout.
+    #>
+    param([string]$ConfigDirectory, [string]$logFile)
+    while ($true) {
+        Clear-Host
+        Write-Host '=== Edit Deployment Script Configuration ===' -ForegroundColor Cyan
+        Write-Host 'a. Select Category (e.g., Intune/MDM, AD, etc.)'
+        Write-Host 'b. Validate/Preview Configuration (dry-run, show issues, show order of operations, preview build certificate)'
+        Write-Host 'c. Change History (view, undo, redo; by date and user)'
+        Write-Host 'd. Save/Exit/Discard Changes'
+        Write-Host 'e. Return to previous menu'
+        $choice = Read-Host 'Select an option [a-e] (default: e)'
+        if ([string]::IsNullOrWhiteSpace($choice)) { $choice = 'e' }
+        switch ($choice.ToLower()) {
+            'a' { Show-SelectCategoryMenu -ConfigDirectory $ConfigDirectory -logFile $logFile }
+            'b' {
+                Write-Log -Message '[Stub] Dry-run/validation logic called.' -Level 'Info' -LogFile $logFile
+                Write-Host '[Stub] Dry-run/validation logic goes here.' -ForegroundColor Yellow
+                Write-Host 'Yet to be created' -ForegroundColor Red
+                Write-Host 'Press Enter to return to the previous menu' -ForegroundColor Yellow
+                Read-Host
+                return
+            }
+            'c' {
+                Write-Log -Message '[Stub] Change history logic called.' -Level 'Info' -LogFile $logFile
+                Write-Host '[Stub] Change history logic goes here.' -ForegroundColor Yellow
+                Write-Host 'Yet to be created' -ForegroundColor Red
+                Write-Host 'Press Enter to return to the previous menu' -ForegroundColor Yellow
+                Read-Host
+                return
+            }
+            'd' {
+                Write-Log -Message '[Stub] Save/Exit/Discard logic called.' -Level 'Info' -LogFile $logFile
+                Write-Host '[Stub] Save/Exit/Discard logic goes here.' -ForegroundColor Yellow
+                Write-Host 'Yet to be created' -ForegroundColor Red
+                Write-Host 'Press Enter to return to the previous menu' -ForegroundColor Yellow
+                Read-Host
+                return
+            }
+            'e' { Show-DeploymentConfigMenu -ConfigDirectory $ConfigDirectory -logFile $logFile; return }
+            default { Write-Host 'Invalid selection. Please choose a-e.' -ForegroundColor Red; Read-Host 'Press Enter to continue' }
+        }
+    }
+}
+
+function Show-SelectCategoryMenu {
+    <#
+    .SYNOPSIS
+        Shows the category selection menu for config editing.
+    .DESCRIPTION
+        Lets the user pick a config category to edit (e.g., Intune/MDM, AD, etc.).
+    .PARAMETER ConfigDirectory
+        The directory where deployment configurations are stored.
+    .PARAMETER logFile
+        The current session log file path.
+    .EXAMPLE
+        Show-SelectCategoryMenu -ConfigDirectory $ConfigDirectory -logFile $logFile
+    .NOTES
+        EN-AU spelling and accessible output throughout.
+    #>
+    param([string]$ConfigDirectory, [string]$logFile)
+    $categories = @('Intune/MDM', 'Active Directory', 'Device Configuration', 'Device Security', 'Applications', 'Cloud Services', 'Windows Update', 'Network & Connectivity', 'Miscellaneous')
+    while ($true) {
+        Clear-Host
+        Write-Host '=== Select Configuration Category ===' -ForegroundColor Cyan
+        for ($i = 0; $i -lt $categories.Count; $i++) {
+            Write-Host ("{0}. {1}" -f ($i + 1), $categories[$i])
+        }
+        Write-Host ("{0}. Return to previous menu" -f ($categories.Count + 1))
+        $choice = Read-Host ("Select a category [1-{0}] (default: {0})" -f ($categories.Count + 1))
+        if ([string]::IsNullOrWhiteSpace($choice)) { $choice = ($categories.Count + 1).ToString() }
+        if ($choice -match '^[0-9]+$' -and [int]$choice -ge 1 -and [int]$choice -le ($categories.Count + 1)) {
+            if ([int]$choice -eq ($categories.Count + 1)) { Show-EditConfigMenu -ConfigDirectory $ConfigDirectory -logFile $logFile; return }
+            Show-OptionListMenu -Category $categories[([int]$choice - 1)] -ConfigDirectory $ConfigDirectory -logFile $logFile
+        }
+        else {
+            Write-Host 'Invalid selection.' -ForegroundColor Red
+            Read-Host 'Press Enter to continue'
+        }
+    }
+}
+
+function Show-OptionListMenu {
+    <#
+    .SYNOPSIS
+        Shows the list of options for a selected category.
+    .DESCRIPTION
+        Lets the user view and edit options in the chosen category.
+    .PARAMETER Category
+        The selected configuration category.
+    .PARAMETER ConfigDirectory
+        The directory where deployment configurations are stored.
+    .PARAMETER logFile
+        The current session log file path.
+    .EXAMPLE
+        Show-OptionListMenu -Category $Category -ConfigDirectory $ConfigDirectory -logFile $logFile
+    .NOTES
+        EN-AU spelling and accessible output throughout.
+    #>
+    param([string]$Category, [string]$ConfigDirectory, [string]$logFile)
+    Write-Log -Message ("[Stub] Option list/edit menu for category: {0}" -f $Category) -Level 'Info' -LogFile $logFile
+    Write-Host ("[Stub] Option list/edit menu for category: {0}" -f $Category) -ForegroundColor Yellow
+    Write-Host '[Stub] This will show all options in the category, allow edit, bulk actions, and help.'
+    Write-Host 'Yet to be created' -ForegroundColor Red
+    Write-Host 'Press Enter to return to category menu' -ForegroundColor Yellow
+    Read-Host
+    Show-SelectCategoryMenu -ConfigDirectory $ConfigDirectory -logFile $logFile
+}
+
 function Export-DeploymentScripts {
     <#
     .SYNOPSIS
@@ -125,7 +248,7 @@ function Export-DeploymentScripts {
     Write-Log -Message 'Yet to be created' -Level 'Warning' -LogFile $logFile
     Write-Log -Message 'Press enter to return to main menu' -Level 'Info' -LogFile $logFile
     Read-Host
-    Show-DeploymentMenu -ConfigDirectory $ConfigDirectory -logFile $logFile
+    Show-DeploymentConfigMenu -ConfigDirectory $ConfigDirectory -logFile $logFile
 }
 function Remove-OldDeploymentConfigs {
     <#
@@ -148,7 +271,7 @@ function Remove-OldDeploymentConfigs {
     Write-Log -Message 'Yet to be created' -Level 'Warning' -LogFile $logFile
     Write-Log -Message 'Press enter to return to main menu' -Level 'Info' -LogFile $logFile
     Read-Host
-    Show-DeploymentMenu -ConfigDirectory $ConfigDirectory -logFile $logFile
+    Show-DeploymentConfigMenu -ConfigDirectory $ConfigDirectory -logFile $logFile
 }
 function Restore-ArchivedDeploymentConfig {
     <#
@@ -172,16 +295,16 @@ function Restore-ArchivedDeploymentConfig {
     Write-Host ""
     Write-Host "Press enter to return to main menu" -ForegroundColor Yellow
     Read-Host
-    Show-DeploymentMenu -ConfigDirectory $ConfigDirectory -logFile $logFile
+    Show-DeploymentConfigMenu -ConfigDirectory $ConfigDirectory -logFile $logFile
 }
 function Edit-DefaultDeploymentConfig {
     <#
     .SYNOPSIS
-        Stub for creating or editing the default configuration for all new deployment scripts.
+        Loads and invokes the modularised default configuration editor.
     .DESCRIPTION
-        Placeholder for future implementation. Prompts the user to return to the menu.
+        Imports the DefaultConfigCLI module and calls Edit-DefaultDeploymentConfig, passing through parameters. All actions are logged.
     .PARAMETER ConfigDirectory
-        The directory where deployment configurations are stored.
+        The directory where user configuration files are stored.
     .PARAMETER logFile
         The current session log file path.
     .EXAMPLE
@@ -190,11 +313,20 @@ function Edit-DefaultDeploymentConfig {
         EN-AU spelling and accessible output throughout.
     #>
     param([string]$ConfigDirectory, [string]$logFile)
-    Write-Host ""
-    Write-Host "[Stub] Create/Edit default configuration for all new deployment scripts logic goes here." -ForegroundColor Red
-    Write-Host "Yet to be created" -ForegroundColor Yellow
-    Write-Host ""
-    Write-Host "Press enter to return to main menu" -ForegroundColor Yellow
-    Read-Host
-    Show-DeploymentMenu -ConfigDirectory $ConfigDirectory -logFile $logFile
+    $modulePath = Join-Path $PSScriptRoot '../CLI/DefaultConfigCLI.psm1'
+    try {
+        if (-not (Get-Module -ListAvailable | Where-Object { $_.Path -eq $modulePath })) {
+            Import-Module $modulePath -Force
+            Write-Log -Message ("Imported module: {0}" -f $modulePath) -Level 'Info' -LogFile $logFile
+        }
+        Write-Log -Message 'Invoking modularised Edit-DefaultDeploymentConfig.' -Level 'Action' -LogFile $logFile
+        Import-Module $modulePath -Force
+        Edit-DefaultDeploymentConfig -ConfigDirectory $ConfigDirectory -logFile $logFile
+    }
+    catch {
+        Write-Log -Message ("Error in Edit-DefaultDeploymentConfig wrapper: {0}" -f $_) -Level 'Error' -LogFile $logFile
+        Write-Host "A critical error occurred in the configuration editor: $($_.Exception.Message)" -ForegroundColor Red
+        Read-Host "Press Enter to return to the deployment menu"
+    }
+    Show-DeploymentConfigMenu -ConfigDirectory $ConfigDirectory -logFile $logFile
 }

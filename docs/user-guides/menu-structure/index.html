@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/WindowsBuildCertificate">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806863009725">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806951467667">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,11 +31,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.806863009725" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.806951467667" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.806863009725" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.806951467667" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.806863009725" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.806951467667" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -217,54 +217,43 @@
         <span>Menu Structure</span>
     </h2>
 </doc-anchor-target>
-<p>Menus are modular, accessible, and colour-coded for clarity:</p>
+<p>Below is the full CLI menu structure for WindowsBuildCertificate, using ASCII-art and inline context comments for accessibility and clarity. This reflects the entire project, not just a single screen.</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
 <div class="codeblock-title">plaintext</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">=== Windows Deployment Script Creator === (blue)
 
 1. Deployment Script Configuration Management
-2. Export OOBE/Post-Deployment Scripts
-3. Get Logs
-4. Help
-5. Exit</code></pre>
-</doc-codeblock></div>
-<p>Help and documentation sections use purple for emphasis. All menu navigation and actions are logged for audit and troubleshooting.</p>
-<doc-anchor-target id="current-menus">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#current-menus">#</doc-anchor-trigger>
-        <span>Current menus</span>
-    </h2>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<div class="codeblock-title">plaintext</div>
-<pre translate="no" class="language-none"><code v-pre class="language-none">Main Menu (blue)
-├── 1. Deployment Script Configuration Management
-│   │  (Options 1-6 are all currently stubs, yet to be implimented)
+│   │  (Options 1-5 are all currently stubs, yet to be implemented)
 │   │
 │   ├── 1. Create new deployment script configuration
+│   │      # Start a new config from scratch
 │   ├── 2. Edit existing deployment script configuration
+│   │      # Edit, validate, and manage an existing config (with file locking)
+│   │      ├── a. Select Category (e.g., Intune/MDM, AD, etc.)
+│   │      │     ├── i. List/Edit Options in Category
+│   │      │     │     ├── Edit Option (details, value, reset, remediation, dependencies)
+│   │      │     │     └── Bulk Actions (enable/disable/reset all)
+│   │      │     └── ii. Export/Import Category Config
+│   │      ├── b. Toggle Advanced Options
+│   │      ├── c. Validate/Preview Configuration (dry-run, show issues, show order of operations, and preview complete/incomplete build certificate on screen)
+│   │      ├── d. Change History (view, undo, redo; by date and user)
+│   │      ├── e. Save/Exit/Discard Changes
+│   │      └── f. File Locking (shows who has the file locked, allows force unlock if stale)
 │   ├── 3. Export deployment scripts from an existing configuration
+│   │      # Export a ready-to-run script for deployment/remediation
 │   ├── 4. Archive deployment configurations not used in the last 90 days
 │   ├── 5. Restore an archived configuration
 │   ├── 6. Create/Update default configuration for all new deployment scripts
 │   └── 7. Return to main menu
 │
-├── 2. Export OOBE/Post-Deployment Scripts
+├── 2. Get Logs
 │   │
-│   └── [Stub] Export logic (to be implemented)
-│
-├── 3. Get Logs
-│   │
-│   ├── 1. View current session log
-│   │   (opens directly in Notepad)
-│   │
-│   ├── 2. View past session logs
-│   │   (Opens grid view to select, before opening in Notepad)
-│   │
+│   ├── 1. View current session log (opens directly in Notepad)
+│   ├── 2. View past session logs (Opens grid view to select, before opening in Notepad)
 │   ├── 3. Compress Previous Months' Logs
 │   └── 4. Back to main menu
 │
-├── 4. Help
+├── 3. Help
 │   │
 │   ├── 1. Project License (opens browser)
 │   ├── 2. Documentation &amp; Manual (opens browser)
@@ -272,9 +261,55 @@
 │   ├── 4. GitHub Repository (opens browser)
 │   └── Enter/X. Return to main menu
 │
-└── 5. Exit</code></pre>
+└── 4. Exit
+    # Exit the CLI tool</code></pre>
 </doc-codeblock></div>
 <p>All menus are modular PowerShell functions. Menu titles use blue, documentation/resources use purple, and all actions are logged. See code for details on menu logic and accessibility.</p>
+<doc-anchor-target id="how-the-default-configuration-editor-cli-works">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-the-default-configuration-editor-cli-works">#</doc-anchor-trigger>
+        <span>How the Default Configuration Editor CLI Works</span>
+    </h2>
+</doc-anchor-target>
+<p>The Default Configuration Editor (from <code v-pre>DefaultConfigCLI.psm1</code>) provides a robust, accessible, and user-friendly CLI for editing the default deployment script configuration. Key features and workflow:</p>
+<ul>
+<li><p><strong>Menu Navigation:</strong></p>
+<ul>
+<li>Tabbed navigation for Pre-Deployment, Post-Deployment, and User Options (use P/T/U keys).</li>
+<li>Paging support for long lists; never splits a category across pages.</li>
+<li>Options are grouped by category, with clear headers and columnar layout when space allows.</li>
+</ul>
+</li>
+<li><p><strong>Option Toggling and State:</strong></p>
+<ul>
+<li>Each option can be toggled on/off by number, with multi-select (e.g., 1,2,3).</li>
+<li>Changed options are marked with an asterisk (*) and shown in red for accessibility.</li>
+<li>Batch actions: &#x27;A&#x27; = select all, &#x27;N&#x27; = select none.</li>
+<li>Unsaved changes are tracked and prompt before exit.</li>
+</ul>
+</li>
+<li><p><strong>Help and Accessibility:</strong></p>
+<ul>
+<li>Type &#x27;?N&#x27; (e.g., &#x27;?3&#x27;) for inline help on any option.</li>
+<li>All menu cues have non-colour fallbacks and are screen reader friendly.</li>
+<li>EN-AU spelling and inclusive language throughout.</li>
+</ul>
+</li>
+<li><p><strong>Saving, Reloading, and Exiting:</strong></p>
+<ul>
+<li>&#x27;S&#x27; = save changes, &#x27;R&#x27; = reload from file, &#x27;Q&#x27; = quit (with unsaved changes prompt).</li>
+<li>All actions and errors are logged using Write-Log.</li>
+</ul>
+</li>
+<li><p><strong>Robustness:</strong></p>
+<ul>
+<li>Handles missing or corrupt config files gracefully, with clear error messages and logging.</li>
+<li>All state recalculation and redraw logic is modular and centralised.</li>
+<li>Designed for extensibility and regression resistance.</li>
+</ul>
+</li>
+</ul>
+<p>For full details, see the inline documentation in <code v-pre>modules/CLI/DefaultConfigCLI.psm1</code> and the <a href="../../code/modules/">Modules and Functions</a> documentation.</p>
 
                                 
                                 <!-- Required only on API pages -->

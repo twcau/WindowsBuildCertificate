@@ -54,6 +54,8 @@ function Show-HelpMenu {
     Write-Log -Message ("User selected help menu option: {0}" -f $userInput) -Level 'Action' -MenuOption $userInput -LogFile $logFile
     if ([string]::IsNullOrWhiteSpace($userInput) -or $userInput.Trim().ToUpper() -eq 'X') {
         Write-Log -Message 'User exited help menu.' -Level 'Info' -LogFile $logFile
+        # Explicitly return to the main menu for consistent navigation
+        Show-MainMenu -LogDirectory $env:TEMP -logFile $logFile -ConfigDirectory $env:TEMP
         return
     }
     if ($userInput -match '^[1-4]$') {
@@ -65,14 +67,16 @@ function Show-HelpMenu {
         }
         try {
             Start-Process $url
-            Write-Log -Message ("Opened help menu link: {0}" -f $url) -Level 'Info' -LogFile $logFile
             Write-Log -Message ("Opened {0} in your default browser." -f $url) -Level 'Action' -LogFile $logFile
         }
         catch {
-            Write-Log -Message ("Failed to open help menu link: {0}. Error: {1}" -f $url, $_) -Level 'Error' -LogFile $logFile
-            Write-Log -Message ("Unable to open {0}. Please copy and paste it into your browser." -f $url) -Level 'Warning' -LogFile $logFile
+            Write-Host ("Unable to open {0}. Please copy and paste it into your browser." -f $url) -ForegroundColor Red
         }
-        Write-Log -Message 'Press Enter to return to the main menu.' -Level 'Info' -LogFile $logFile
+        Write-Host 'Press Enter to return to the help menu.' -ForegroundColor Yellow
         Read-Host
+        Show-HelpMenu -logFile $logFile
+        return
     }
+    # If input is not recognised, just loop again
+    Show-HelpMenu -logFile $logFile
 }

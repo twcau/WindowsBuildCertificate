@@ -1,0 +1,23 @@
+{
+  "ConfigName": "Default User Config",
+  "Description": "User's default configuration for deployment scripts.",
+  "Purpose": "Stores the user's preferred configuration options for new deployment scripts.",
+  "Created": "2025-07-27",
+  "CreatedBy": "testuser",
+  "LastModified": "2025-07-27",
+  "ModifiedBy": "pc",
+  "ChangeHistory": [
+    "2025-07-27 16:54: Saved config changes.",
+    "2025-07-27 17:10: Saved config changes on exit."
+  ],
+  "Options": [
+    {
+      "ID": 1,
+      "State": false
+    },
+    {
+      "ID": 2,
+      "State": true
+    }
+  ]
+}

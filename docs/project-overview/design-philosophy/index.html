@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/WindowsBuildCertificate">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806863009725">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806951467667">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -31,11 +31,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.806863009725" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.806951467667" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.806863009725" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.806951467667" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.806863009725" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.806951467667" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -212,6 +212,28 @@
 <li>User-driven configuration and export</li>
 <li>Documentation-first approach</li>
 </ul>
+<hr>
+<doc-anchor-target id="cli-module-menu-flow-standard">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cli-module-menu-flow-standard">#</doc-anchor-trigger>
+        <span>CLI Module Menu Flow Standard</span>
+    </h2>
+</doc-anchor-target>
+<p>For all CLI modules and menu-driven scripts:</p>
+<ul>
+<li><p><strong>CLI modules must never redirect to menus themselves.</strong><br />
+All CLI modules and functions should return control to their caller after completing their task, including after errors or user exits.</p>
+</li>
+<li><p><strong>Menu navigation and flow must be managed by the calling (wrapper) function or script.</strong><br />
+This ensures consistent, predictable menu behaviour and prevents accidental returns to the wrong menu or main menu.</p>
+</li>
+<li><p><strong>CLI modules must not call other menus, main menus, or perform navigation logic.</strong><br />
+They should only perform their core function and return.</p>
+</li>
+<li><p><strong>Document this pattern in all new CLI modules and review existing modules for compliance.</strong></p>
+</li>
+</ul>
+<p>This standard ensures robust, maintainable, and accessible menu navigation throughout the project.</p>
 
                                 
                                 <!-- Required only on API pages -->

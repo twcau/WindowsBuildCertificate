@@ -10,3 +10,8 @@ This project is a PowerShell 7 automation and validation toolkit for Windows dev
 - Use EN-AU spelling for all documentation and comments, except where user-facing output requires otherwise.
 - All scripts must use the robust, root-based module import pattern and centralised logging as implemented in this project.
 - The `.website/` folder is the canonical source for documentation; keep all scripts and documentation in sync.
+- **CLI modules must never redirect to menus themselves—always return control to the caller for consistent menu flow. Menu navigation and flow must be managed by the calling (wrapper) function or script.**
+- When introducing new properties to objects, always ensure they are defined at creation to avoid runtime errors.
+- All menu and state logic must be modular, with state recalculation and redraw logic centralised and reusable.
+- All CLI/menu changes must be regression-tested after every change, and all regressions must be fixed before proceeding.
+- Never assume a property exists on a PSCustomObject unless it is explicitly defined at creation.

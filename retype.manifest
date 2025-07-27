@@ -1,6 +1,6 @@
 {
   "version": "3.11.0",
-  "created": "2025-07-26T16:36:52Z",
+  "created": "2025-07-27T17:11:10Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -329,6 +329,9 @@
     },
     {
       "path": "user-guides\\getting-started\\index.html"
+    },
+    {
+      "path": "user-guides\\getting-started\\master-configuration-options\\index.html"
     },
     {
       "path": "user-guides\\index.html"

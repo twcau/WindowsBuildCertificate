@@ -8,8 +8,6 @@ A PowerShell 7 automation and validation toolkit for Windows device build certif
 >
 > This repository is still under major development and testing, and isn't even close to being ready for prime time use. It's great that you're interested in it however, and feel welcome to let me know if you feel there's anything that could be done or enhanced as I get this ready.
 
-## Table of Contents
-- [Table of Contents](#table-of-contents)
 - [Project Overview](#project-overview)
 - [Features](#features)
 - [Getting Started](#getting-started)
@@ -39,6 +37,9 @@ For more information, please see [Project Overview](https://twcau.github.io/Wind
 - Build certificate generation and export
 - Robust logging, error handling, and accessibility
 - Exportable scripts for OOBE and post-deployment integration
+- Advanced CLI menu: tabbed navigation, paging, multi-select, real-time change tracking
+- Robust, accessible, and extensible configuration management
+- EN-AU spelling and accessibility compliance
 
 For more information, please see [Features](https://twcau.github.io/WindowsBuildCertificate/project-overview/specification/).
 
@@ -67,6 +68,10 @@ For more information, please see [Getting Started](https://twcau.github.io/Windo
 - See `scripts/` for main entry points.
 - See `modules/` for reusable functions.
 - See `tests/` for Pester and validation scripts.
+- Use numbers or comma-separated numbers to toggle options
+- Use 'A' to select all, 'N' to select none, 'S' to save, 'R' to reload, 'Q' to quit
+- Tabs and paging: use tab keys and F/B for navigation
+- Changed options are marked with an asterisk (*) and red text
 
 For more information, please see [Menu Structure](https://twcau.github.io/WindowsBuildCertificate/user-guides/menu-structure/).
 
@@ -89,10 +94,16 @@ For more information, please see [Testing](https://twcau.github.io/WindowsBuildC
 
 - Logs are written to `$env:TEMP/WindowsBuildCertificate.log`
 - See [KNOWNISSUES.md](KNOWNISSUES.md) for troubleshooting
+- If the “changed” state does not update, or you see error messages, ensure you are using the latest version
+- For property errors, check that all object properties are initialised at creation
+- For accessibility issues, ensure your terminal supports colour and screen reader cues
 
 ## Accessibility
 
 - All scripts and documentation follow accessibility and EN-AU standards
+- All menu cues have non-colour fallbacks (e.g., asterisk for changed state)
+- EN-AU spelling throughout
+- Screen reader and keyboard navigation friendly
 
 For more information, please see [Accessibility](https://twcau.github.io/WindowsBuildCertificate/user-guides/accessibility/).
 
